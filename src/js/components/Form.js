@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import '../../index.css';
 
 class Form extends Component {
@@ -25,7 +24,6 @@ class Form extends Component {
   render() {
     return (
       <form>
-        {/* <img src={logo} /> */}
         <input
           type="text"
           value={this.state.value}

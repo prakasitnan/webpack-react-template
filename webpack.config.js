@@ -1,5 +1,7 @@
 const { resolve } = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -43,9 +45,14 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebPackPlugin({
             template: "./src/index.html",
             filename: "./index.html"
         })
-    ]
+    ],
+    devServer: {
+        hot: true,
+    }
 };

@@ -1,13 +1,13 @@
 const { resolve } = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: resolve(__dirname, 'dist'),
+        path: resolve(__dirname, 'build'),
     },
     module: {
         rules: [

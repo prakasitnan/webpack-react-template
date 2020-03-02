@@ -4,6 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+    devtool:'source-map',
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
@@ -31,12 +32,22 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use:[
                     {loader: 'style-loader'},
-                    {loader: 'css-loader'},
-                    {loader: 'sass-loader'}
+                    {
+                        loader: 'css-loader',
+                        options:{
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options:{
+                            sourceMap: true
+                        }
+                    }
                 ]
             },
             {
-                test:/\.(png|jpg)$/,
+                test:/\.(png|jpg|webp)$/,
                 exclude: /(node_modules)/,
                 use:[
                     { loader: 'file-loader'}
@@ -54,5 +65,8 @@ module.exports = {
     ],
     devServer: {
         hot: true,
-    }
+    },
+    performance: {
+        hints: 'warning'
+      }
 };

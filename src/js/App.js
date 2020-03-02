@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader';
 import Form from './components/Form';
-import icon from '../../assets/images/icon.png';
+import icon from '../../assets/images/icon.webp';
 
  class App extends Component {
     render() {

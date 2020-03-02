@@ -14,6 +14,7 @@ class Form extends Component {
 
   handleChange(event) {
     const { value } = event.target;
+    debugger
     this.setState(() => {
       return {
         value
